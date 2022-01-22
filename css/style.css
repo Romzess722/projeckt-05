@@ -1,0 +1,1029 @@
+body {
+  font-family: 'Raleway', 'Roboto', sans-serif;
+  background-color: #ffffff;
+  letter-spacing: 0.03em;
+  /* padding-top: 82px;
+  user-select: none; */
+}
+:root {
+  --primary-text-color: #212121;
+  --text-color: #757575;
+  --text-color-actve: #ffffff;
+  --accent-color: #2196f3;
+  --button-hover: #188ce8;
+  --footer-color: #2f303a;
+  --background-team: #f5f4fa;
+  --border-header: #ececec;
+  --border-card-portfl: #eeeeee;
+
+  --animate: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*^----------COMPONENT ELEMENT------------  */
+.heading {
+  margin-bottom: 50px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+
+.pre-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--text-color-actve);
+}
+
+.social-compont {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.button-comp {
+  border: transparent;
+  border-radius: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--text-color-actve);
+  background-color: var(--accent-color);
+}
+
+/*^ НЕ ВИДНО НА СТРАНИЦЕ НО ВИДНО В ГУГЛ  */
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/*^  ----------ГЛОБАЛЬНЫЕ СТИЛИ --------------- */
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+/*^ СБРАСЫВАЕМ СТИЛИ ДЛЯ ЭЛЕМЕНТОВ  УТИЛИТЫ*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*^ ----------ПОЗИЦИОНИРОВАНИЕ ДЛЯ ХЕДЕРА-------  */
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav,
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* убирает правый марджем у последней ссылки */
+.site-item:not(:last-child),
+.list-link:not(:last-child) {
+  margin-right: 50px;
+}
+
+.link {
+  transition: color var(--animate);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  text-decoration: none;
+}
+
+.contact {
+  display: flex;
+  margin-left: auto;
+}
+
+/*^ Делает активной вкладку текущей страницы */
+.link.active-page {
+  color: var(--accent-color);
+}
+.site-item {
+  position: relative;
+}
+
+.active-page::after {
+  position: absolute;
+  content: '';
+  height: 4px;
+  border-radius: 4px;
+  width: 100%;
+  background-color: var(--button-hover);
+  left: 0;
+  bottom: -33px;
+}
+
+/* фиксированая шапка */
+.header {
+  border: 1px solid var(--border-header);
+
+  /* z-index: 9999;
+  position: fixed;
+  width: 100%;
+  min-height: 82px;
+  top: 0;
+  left: 0; */
+}
+
+/*^ ---------- Стиль для ЛОГОТИПА -----------------------*/
+.site-logo {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  color: coral;
+}
+
+.home {
+  margin-right: 93px;
+}
+
+.dark-logo {
+  color: var(--primary-text-color);
+}
+
+/*^ Стиль для лого в футере */
+.light-logo {
+  color: var(--text-color-actve);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+/*^  Стили для ссылок хедере и контактов общие */
+.site-nav,
+.list-link {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--text-color);
+  list-style: none;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+}
+
+/*^ Стили для контактов в хедере*/
+.link.list-link {
+  color: var(--text-color);
+}
+
+.link-icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+/*^ Стили для ссылок хедера и контакто */
+
+/*^ Стили для ссылок навигации и контктов хедера при наведении*/
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
+}
+
+/*^ ----------СТИЛИ ДЛЯ HERO---------------- */
+.hero {
+  background-color: var(--footer-color);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/Фон.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  text-align: center;
+}
+
+/*^ --------HERO заголовок */
+.hero-title {
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+/*^ ----------СТИЛИ ДЛЯ КНОПКИ В HERO--------------- */
+.hero-button .hero-link {
+  color: var(--text-color-actve);
+}
+
+.hero-button {
+  margin-top: 30px;
+  transition: background-color var(--animate);
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background-color: var(--button-hover);
+}
+
+.hero-link {
+  text-decoration: none;
+}
+
+/*^ ----------СТИОИ ДЛЯ FEATURE------------------ */
+.feature-list {
+  display: flex;
+  list-style: none;
+}
+
+.feature-item {
+  width: 270px;
+}
+
+.feature-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.feature-elemtnt {
+  display: flex;
+  justify-content: center;
+  background: var(--background-team);
+  padding: 25px 100px;
+  border-radius: 4px;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.feature-title {
+  margin-top: 30px;
+  color: #212121;
+}
+
+.feature-descriotion {
+  margin-top: 10px;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #757575;
+}
+
+.work-img {
+  list-style: none;
+  display: flex;
+}
+
+.picture:not(:last-child) {
+  margin-right: 30px;
+}
+
+.picture-img {
+  display: block;
+}
+
+/*^ СТИЛИ ВНУТРЕНИЕ ДЛЯ ЧЕМ МЫ ЗАНИМАЕМСЯ DOING  */
+.doing {
+  padding-top: 0;
+  padding-bottom: 94px;
+}
+
+.picture {
+  position: relative;
+}
+
+.doing-content {
+  background: rgba(47, 48, 58, 0.8);
+  padding: 27px 0;
+  width: 370px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+}
+
+.picture-before-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/*^ ----------НАША КОМАНДА-------------------  */
+.aur-team {
+  background-color: var(--background-team);
+}
+
+.aur-team {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.team {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-item {
+  background-color: var(--text-color-actve);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-item:hover,
+.team-item:focus {
+  transform: scale(1.1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-item:hover {
+  cursor: pointer;
+}
+.card-content {
+  padding: 20px 24px;
+  border: 1px solid var(--border-card-portfl);
+}
+
+.team .team-content {
+  padding: 30px 0;
+  max-width: 270px;
+}
+
+.team-title {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+
+.team-description {
+  font-family: Roboto;
+
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+/*^ СТИЛИ ДЛЯ СОЦ СЕТЕЙ В БЛОКЕ TEAM  */
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 16px;
+  color: #afb1b8;
+}
+
+.social-icons {
+  fill: currentColor;
+}
+
+.social-links:hover,
+.social-links:focus {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+.social-items + .social-items {
+  margin-left: 10px;
+}
+
+/*^ СТИЛИ ДЛЯ БЛОКА КЛИЕНТЫ */
+
+.clients-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.clients-items {
+  display: flex;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.clients-links {
+  transition: color var(--animate);
+  padding: 16px 32px;
+  color: #afb8b1;
+}
+
+.clients-links {
+  fill: currentColor;
+}
+
+.clients-links:hover,
+.clients-links:focus {
+  color: var(--accent-color);
+}
+.clients-items + .clients-items {
+  margin-left: 30px;
+}
+
+/*^----------FILTERS--PORTFOLIO----------------  */
+.filters-portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.filters {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.filters-item:not(:last-child) {
+  margin-right: 9px;
+}
+
+.button-menu {
+  transition: background-color var(--animate), color 250ms;
+}
+
+.button-menu:hover,
+.button-menu:focus {
+  transform: scale(1);
+  background-color: var(--accent-color);
+  color: var(--background-team);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.button-menu {
+  background-color: var(--background-team);
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  padding: 6px 22px;
+  letter-spacing: 0.03em;
+  border-radius: 4px;
+  border: transparent;
+}
+
+/*^----------PROJECKTS--PORTFOLIO----------------  */
+.projeckts {
+  margin-top: 50px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -30px;
+  margin-bottom: -30px;
+}
+
+.projeckts-item {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-right: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.projeckts-link {
+  text-decoration: none;
+}
+
+.projeckts-item:hover .card-hover-text {
+  transform: translateY(0%);
+}
+
+.card-hover-text {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 63px 24px;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 500ms;
+  overflow: auto;
+}
+
+.projeckts-item-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.projeckts-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.projeckts-title {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 2;
+  color: var(--primary-text-color);
+}
+
+.projeckts-description {
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.87;
+  color: var(--text-color);
+}
+
+/*^ ----------FOOTER------------------- */
+.footer {
+  background-color: var(--footer-color);
+}
+
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.address-link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 70px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.71;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.address-link:hover,
+.address-link:focus {
+  color: var(--text-color-actve);
+}
+
+.footer-elements {
+  display: flex;
+}
+
+.join-list {
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.join-links {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.join-icons {
+  fill: #ffffff;
+}
+
+.join-links:hover,
+.join-links:focus {
+  background-color: var(--accent-color);
+}
+
+.join-item + .join-item {
+  margin-left: 10px;
+}
+
+.sent {
+  margin-left: 93px;
+  border-radius: 4px;
+  width: 570px;
+}
+.form-sent {
+  position: relative;
+  margin-bottom: 28px;
+  display: block;
+}
+.sent-input {
+  padding: 15px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(--footer-color);
+  width: 358px;
+}
+.sent-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sent-title {
+  margin-bottom: 20px;
+}
+
+.sent-btn:hover {
+  background: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+/* при фокусе убирает текст */
+/* .sent-input:focus + .sent-label {
+  color: rgb(24, 140, 232);
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+} */
+
+/* ефект разворота емейла */
+.sent-input:focus + .sent-label,
+.sent-input:not(:placeholder-shown) + .sent-label {
+  color: rgb(24, 140, 232);
+  left: -45px;
+  transform: translateY(-10px) rotate(-90deg);
+  transition-duration: 1500ms;
+}
+
+.sent-input {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 18px;
+  color: #f5f4fa;
+}
+
+/* ---------МОДАЛЬНОЕ ОКНО----------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 500ms, visibility 500ms;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  min-width: 528px;
+  border-radius: 4px;
+  padding: 40px;
+
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.close-svg {
+  height: 30px;
+  width: 30px;
+}
+
+.close-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #999999;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  fill: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/*^----FORMA ICON AND TEXT ----------------*/
+
+.form {
+  width: 448px;
+  text-align: center;
+}
+
+.form-title {
+  margin-bottom: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1, 15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-text-color);
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 28px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  margin: 0;
+  padding: 11px 30px;
+  border: transparent;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.field-icon {
+  height: 18px;
+  width: 18px;
+}
+/* выбрать  form-label который идет за form-label и свойство */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  color: rgb(24, 140, 232);
+  left: 0px;
+  transform: translateY(-50px);
+}
+.form-sent:focus-within .sent-label {
+  color: var(--accent-color);
+  left: -45px;
+  transform: translateY(-10px) rotate(-90deg);
+  transition-duration: 1500ms;
+}
+
+.form-input:focus {
+  border-radius: 4px;
+}
+
+.field-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+
+  transform: translateY(-50%);
+}
+
+.form-input:focus ~ .field-icon {
+  fill: var(--accent-color);
+}
+
+/*^ -------СТИЛИ ДЛЯ TEXTAREA------------ */
+
+.form-textarea {
+  resize: none;
+  width: 100%;
+  margin: 0;
+  padding: 12px 30px;
+  border: transparent;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.form-comment {
+  position: relative;
+  margin-top: 32px;
+}
+
+.comment-label {
+  position: absolute;
+  top: 8%;
+  left: 40px;
+  transform: translateY(-8%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comment-icon {
+  position: absolute;
+  top: 8%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-8%);
+}
+
+/*^ аналог функционала  form-label 
+который идет за form-label и свойство*/
+.form-comment:focus-within .comment-icon {
+  fill: var(--accent-color);
+}
+
+.form-field:focus-within .form-input {
+  border: violet;
+}
+
+.form-textarea:focus + .comment-label {
+  color: var(--accent-color);
+  left: 0px;
+  transform: translateY(-50px);
+}
+
+.form-textarea:focus,
+.form-input:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.oder-servise-btn:hover. {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/*^ ------------CHECKBOX-------------- */
+/* скрывает родной чекбокс */
+.checkbox {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-icon {
+  display: inline-block;
+  height: 15px;
+  width: 16px;
+  border: 2px solid var(--primary-text-color);
+  border-radius: 4px;
+  margin-right: 7px;
+  transition: transform 1250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:checked + .checkbox-icon {
+  transform: scale(1.2);
+  background-size: contain;
+  background-color: var(--accent-color);
+  background-image: url('../images/check.svg');
+  border-color: var(--accent-color);
+  background-origin: border-box;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.checkbox:checked ~ .options {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* при фокусе выделяет состояние  */
+.checkbox:focus + .checkbox-icon {
+  transform: scale(1.2);
+  background-size: contain;
+  background-color: white;
+  border-color: var(--button-hover);
+  background-origin: border-box;
+}
+
+.options {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+}
+
+.oder-servise-btn {
+  margin-top: 30px;
+  padding-left: 56px;
+  padding-right: 56px;
+}
+
+.sent-btn {
+  position: relative;
+  padding-top: 11px;
+  padding-left: 29px;
+  padding-right: 62px;
+}
+
+.send-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%);
+}
