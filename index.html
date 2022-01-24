@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body >
     <!--ШАПКА САЙТА -->
     <header class="header">
         <div class="container main-nav">
             <nav class="header-nav">
-                <a class="site-logo animate__animated animate__flip animate__infinite infinite animate__slower	3s home" href="./index.html">Web<span class="dark-logo">Studio</span></a>
+                <a class="site-logo home" href="./index.html">Web<span class="dark-logo">Studio</span></a>
                 <ul class="site-nav">
                     <li class="site-item"><a class="link active-page" href="./index.html">Студия</a></li>
                     <li class="site-item"><a class="link" href="./portfolio.html">Портфолио</a></li>
@@ -48,39 +48,45 @@
     <!-- MODAL WINDOW -->
     <div class="backdrop is-hidden" data-modal>
         <div class="modal ">
-            <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <p class="form-title">Оставьте свои данные, мы вам перезвоним</p>
                 <form autocomplete="off" class="form">
                     
-                    <label class="form-field">
-                        <input type="text" name="name" class="form-input" placeholder=" ">
-                        <span class="form-label">Имя</span>
-                        <svg class="field-icon">
-                            <use href="images/icons.svg#icon-person">
-                            </use>
-                        </svg>
-                    </label>
+                    <div class="container-label">
+                        <label class="form-field">
+                            <input type="text" name="name" class="form-input" required placeholder=" ">
+                            <span class="form-label">Имя</span>
+                            <svg class="field-icon">
+                                <use href="images/icons.svg#icon-person">
+                                </use>
+                            </svg>
+                        </label>
+                    </div>
 
-                    <label class="form-field">
-                        <input type="tel" name="name" class="form-input" placeholder=" ">
-                        <span class="form-label">Телефон</span>
-                        <svg class="field-icon">
-                            <use href="images/icons.svg#icon-phone">
-                            </use>
-                        </svg>
-                    </label>
+                    <div class="container-label">
+                        <label class="form-field">
+                            <input type="tel" name="name" class="form-input" required placeholder=" ">
+                            <span class="form-label">Телефон</span>
+                            <svg class="field-icon">
+                                <use href="images/icons.svg#icon-phone">
+                                </use>
+                            </svg>
+                        </label>
+                    </div>
 
-                    <label class="form-field">
-                        <input type="email" name="name" class="form-input" placeholder=" ">
-                        <span class="form-label">Почта</span>
-                        <svg class="field-icon">
-                            <use href="images/icons.svg#icon-email">
-                            </use>
-                        </svg>
-                    </label>
+                    <div class="container-label">
+                        <label class="form-field">
+                            <input type="email" name="name" class="form-input" required placeholder=" ">
+                            <span class="form-label">Почта</span>
+                            <svg class="field-icon">
+                                <use href="images/icons.svg#icon-email">
+                                </use>
+                            </svg>
+                        </label>
+                    </div>
     
 
                     <div class="form-comment">
-                        <textarea name="text" id="coment" class="form-textarea"  rows="8" placeholder=" "></textarea>
+                        <textarea name="text" id="coment" class="form-textarea"  placeholder=" "></textarea>
                         <label for="coment" type="text" class="comment-label">Коментарий</label>
                         <svg class="comment-icon">
                             <use href="images/icons.svg#icon-comments-bubbles-svgrepo-com">
@@ -89,13 +95,15 @@
                     </div>
                         
                     
-                    <label class="field">
-                        <input class="checkbox" type="checkbox" name="checkbox" value="">
-                        <span class="checkbox-icon"></span>
-                        <span class="options">Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></span>
-                    </label>
+                    <div class="container-checkbox">
+                        <label class="field-checkbox">
+                            <input class="checkbox" type="checkbox" name="checkbox" value="">
+                            <span class="checkbox-icon"></span>
+                            <span class="options">Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></span>
+                        </label>
+                    </div>
 
-                    <button  class="oder-servise-btn button-comp" type="button" >Отправить</button>
+                    <button  class="oder-servise-btn button-comp" type="submit" >Отправить</button>
                 </form>
             
             <button class="close-btn" data-modal-close>
@@ -116,7 +124,7 @@
             </div>
         </section>
 
-        <!-- ОСОБЕНОСТИ -->
+        <!-- ОСОБЕНОСТИ FEATURE-->
         <section class="section">
             <div class="container">
                 <h2 class="visually-hidden">Особенности</h2>
@@ -498,7 +506,7 @@
             </address>
 
             <div class="join">
-                <h3 lang="ПРИСОЕДЕНЯЙТЕСЬ" class="join-title pre-title">ПРИСОЕДЕНЯЙТЕСЬ</h3>
+                <p lang="ПРИСОЕДЕНЯЙТЕСЬ" class="join-title pre-title">ПРИСОЕДЕНЯЙТЕСЬ</p>
                     <ul class="join-list">
                         <li class="join-item">
                             <a href="" class="join-links social-compont">
@@ -538,39 +546,25 @@
                     </ul>
             </div>
 
-            <!-- ПОДПИСКА НА РАЗССЫЛКУ -->
             <div class="sent">
-                <h3 class="sent-title pre-title">Подпишитесь на рассылку</h3>
-                <form autocomplete="off" class="form-sent">
-                    <label class="sent-field">
-                        <input type="text" name="name" class="sent-input" placeholder=" ">
-                        <span class="sent-label">E-mail@</span>
+                <h2 class="pre-title">Подпишитесь на рассылку</h2>
+                <form class="sent-form">
+                    
+                    <label class="sent-label">
+                        <input class="sent-input" type="text" name="email" placeholder="Email" required>
+                        
                     </label>
-                    <button class="sent-btn button-comp" type="button">Подписится
-                        <svg class="send-icon">
+                    <button class="sent-button button-comp" type="submit">Подписится
+                        <svg class="sent-icon" widht="24" height="24">
                             <use href="images/icons.svg#icon-icon-send">
                             </use>
                         </svg>
                     </button>
-                    
                 </form>
             </div>
         </div>
         
     </footer>
     <script src="./js/modal.js"></script>
-    <script>
-       (() =>{
-           document
-           .querySelector('.js-speaker-form')
-           .addEventListener('submit', e => {
-               e.preventDefault();
-
-               new FormData(e.currentTarget).forEach((value, name) =>
-                console.log(`${name}: ${value}`),
-                );
-           });
-       })(); 
-    </script>
 </body>
 </html>
